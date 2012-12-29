@@ -8,8 +8,8 @@ $bar1-bottombg: #222;
 $light-bg1: #111;
 $mid-bg1: #ababab;
 $mid-bg1-highlight: #a9a9a9;
-$visited-text: black;
 $link-color: #75959D;
+$visited-text: lighten($link-color, .2);
 $standard-radius: 5px;
 $primary-gradient-base-color: #e6e6e6;
 $primary-gradient-highlight-color: white;
@@ -32,23 +32,9 @@ label {
   display: block;
 }
 
-#forums {
-  border: 1px solid #ddd;
-}
-
 #forums, .topics {
   .title {
     font-size: 175%;
-  }
-
-  thead tr th {
-    color: white;
-    font-family: Helvetica;
-    font-weight: bold;
-  }
-
-  tbody td {
-    background: white;
   }
 }
 
@@ -145,16 +131,14 @@ form {
   overflow: hidden;
   width: 100%;
 
-  .odd .contents {
-    background-color: #ffffff;
+  .odd {
+    background-color: #F9F9F9;
   }
-  .even .contents{
+  .even {
     background-color: #efefef;
   }
   .post{
     position: relative;
-    margin-top: .5em;
-    margin-bottom: .5em;
     min-width: 35em;
     min-height: 75px;
     @include display-box;
@@ -181,7 +165,7 @@ form {
     .contents{
       @include box-flex(1);
       min-height: 100px;
-      border-left: 1px solid $mid-bg1;
+      border-left: 1px solid #ddd;
       padding: 1em 1em;
 
       span.in_reply_to {
@@ -278,10 +262,13 @@ table.subdued{
   td, th{
     padding: .5em;
   }
+  td{
+    border-top: 1px solid #DDD;
+  }
   thead{
     th{
-      background-color: $bar1-midbg;
-      font-weight: normal;
+      color: $default-text;
+      font-weight: bold;
       text-align: left;
     }
   }
@@ -306,6 +293,9 @@ table.subdued{
     .posts-count, .views-count{
       font-size: .8em;
       width: 80px;
+    }
+    tr.odd td{
+      background-color: #F9F9F9;
     }
   }
 }
