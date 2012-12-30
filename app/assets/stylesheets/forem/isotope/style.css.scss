@@ -263,9 +263,13 @@ table.subdued{
   }
   td, th{
     padding: .5em;
+    &.topics-count, &.views-count, &.posts-count{
+      text-align: center;
+    }
   }
   td{
     border-top: 1px solid #DDD;
+    vertical-align: top;
   }
   thead{
     th{
